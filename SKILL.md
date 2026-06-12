@@ -37,8 +37,14 @@ to expand on demand."*
 
 1. **Disclosure line** (if agent-authored, policy-dependent): top-line italic, e.g.
    *"Posted by Claude Code on \<operator\>'s behalf."* Never a buried footer.
-2. **TL;DR paragraph.** Bold-prefixed (`**TL;DR:**`). Verdict first, then the ONE
-   load-bearing finding, then the ask. 3–6 sentences, self-sufficient.
+2. **TL;DR block.** Bold-prefixed (`**TL;DR:**`). Verdict first, then the ONE
+   load-bearing finding, then the ask — self-sufficient. Optimise it to be *scanned*,
+   not read: put the bold verdict label on its own line, then break the rest across short
+   paragraphs separated by blank lines. When the reasoning has 2+ discrete parts, render
+   them as a real markdown list (`1.` / `-`), never inline `(1)… (2)…` — inline enumeration
+   buried in a long sentence is the wall-of-text that defeats the glimpse reader. A skimming
+   human should catch the verdict and the shape of the argument without reading one full
+   sentence.
 3. **`<details>` blocks, one per topic**, each `<summary><b>…</b></summary>` standing
    alone. The evidence layer: empirical tables, MRE code, file:line refs, exact commit
    SHAs, what-was-run. Order: confirmed findings → refuted hypotheses → nits → hedged ideas.
@@ -84,3 +90,7 @@ value as a record.
 - Hedging everything (no spine) or nothing (bluffing).
 - "Great PR! Just a few nits…" padding. Start at the TL;DR.
 - Trimming the MRE/SHAs "for brevity" — brevity belongs to the TL;DR layer only.
+- **A TL;DR that's one dense block.** Verdict label glued to the front of a 6-sentence
+  run-on, multi-part reasoning crammed inline as `(1)… (2)…`. It's all *there*, but the
+  glimpse reader can't skim it — the verdict and the argument's shape must survive a
+  half-second scan. Label on its own line; discrete reasons as a list.

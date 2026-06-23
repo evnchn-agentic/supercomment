@@ -64,6 +64,15 @@ to expand on demand."*
   say what was independently re-verified (and what got refuted on the way).
 - **Correct yourself in public**, in-thread, plainly — the audit trail is part of the excess.
 - **Credit the counterpart** specifically when they catch your miss or improve your sketch.
+- **Evidence proportionate to severity, before you post.** A "blocking / this is broken"
+  claim needs independently-checkable evidence in hand first — a runnable repro, a failing
+  test, logs/traces, or an exact doc citation for a conformance claim. Can't back it yet?
+  Post it *explicitly hedged*, or as a hold — don't assert severity you haven't shown.
+- **Prefer a runnable repro, and scope what it proves.** When the evidence is a script,
+  embed a self-contained copy-paste-run version + its output, folded in `<details>` (too
+  big? link an immutable test/artifact + exact commands). State what the run proves *and
+  what it doesn't* ("proves it decodes, not that the live source emits the field") —
+  unscoped, a run reads as a stronger claim than it earns.
 
 ## Stock shapes (pick the closest; the structure flexes per shape)
 
@@ -94,3 +103,6 @@ value as a record.
   run-on, multi-part reasoning crammed inline as `(1)… (2)…`. It's all *there*, but the
   glimpse reader can't skim it — the verdict and the argument's shape must survive a
   half-second scan. Label on its own line; discrete reasons as a list.
+- **A comment that adds nothing the linked source doesn't.** Add a decision, synthesis,
+  fresh evidence, or the actionable consequence — restating the PR/issue isn't a comment.
+  (Summarising for a self-sufficient TL;DR is fine; adding *zero* is the smell.)

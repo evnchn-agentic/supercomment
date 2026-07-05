@@ -91,6 +91,11 @@ to expand on demand."*
 Append a `Changelog` footer: date + one line per edit. Silent edits break the thread's
 value as a record.
 
+## GitHub mechanics gotchas (some are IRREVERSIBLE)
+
+- **Never write a bare `#N` (low/4-digit) to mean a list item, a review-finding number, or "point N".** GitHub auto-links `#N` to issue/PR N in the repo and — the irreversible part — **posts a permanent cross-reference backlink into that issue's timeline.** Editing *or deleting* your comment does **not** retract that backlink (verified 2026-06-29: a deleted comment still left its `#2–#5` backlinks standing; there is no API to delete a cross-reference event). So "a reviewer's finding #3" with a bare `#3` spams issue #3 **forever**. Use **prose ("finding 3")** or **escape it (`\#3` → renders "#3", no link)** — and do it **before the first post**, because escaping after the fact fixes the render but the backlink is already permanent. Same forever-trap for an unintended `@username` (pings a stranger) — escape or avoid.
+- See also the full checklist of GitHub-markdown footguns: [`evnchn-agentic/shenanigans` → `gfm-shenanigans.md`](https://github.com/evnchn-agentic/shenanigans/blob/main/gfm-shenanigans.md).
+
 ## Anti-patterns
 
 - Verdict in paragraph four; `<details>` hiding the verdict itself.

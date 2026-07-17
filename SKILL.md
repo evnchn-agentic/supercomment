@@ -35,8 +35,13 @@ to expand on demand."*
 
 ## Structure (top to bottom)
 
-1. **Disclosure line** (if agent-authored, policy-dependent): top-line italic, e.g.
-   *"Posted by Claude Code on \<operator\>'s behalf."* Never a buried footer.
+1. **Disclosure line** (if agent-authored): canonical form
+   *"Posted by Claude Code on \<operator\>'s behalf."* — top-line italic, never a buried footer.
+   Keep the wording stable rather than reinventing it each time (swap `Posted`→`Filed`/`Opened`/`Drafted`
+   only when the verb genuinely differs; add the model name only when it matters). **May be omitted**
+   only when the same *visible* thread already carries the disclosure earlier AND no repo/org policy
+   requires it per-comment — a later reader must still be able to see in-thread that it's agent-drafted
+   (disclose once per thread, not once per reply). Private "they already know" is not enough.
 2. **TL;DR block.** Bold-prefixed (`**TL;DR:**`). Verdict first, then the ONE
    load-bearing finding, then the ask — self-sufficient. Optimise it to be *scanned*,
    not read: put the bold verdict label on its own line, then break the rest across short

@@ -1,6 +1,6 @@
 ---
 name: supercomment
-description: Use when writing any substantive GitHub comment, issue reply, PR body, or thread post — for humans AND for the agents that will read the thread later. Enough at a glimpse for a skimming human; structured excess underneath, because agents thrive on abundance of evidence, not scarcity.
+description: Use when writing any substantive GitHub comment, issue reply, PR body, or thread post — for humans AND for the agents that will read the thread later. Enough at a glimpse for a skimming human; structured excess underneath, because agents thrive on abundance of evidence, not scarcity. Includes "supercomment mini" (a.k.a. mini / super-concise) — the terse follow-up/ack variant: one bold verdict line + at most one fold.
 ---
 
 # Supercomment
@@ -85,6 +85,31 @@ to expand on demand."*
   intent?" or enumerated options.
 - **Answering questions in-thread:** one details block per question, each independently
   citable (file:line); TL;DR says which questions are settled vs open.
+- **Follow-up reply (review addressed) / status note / small ack:** → use **Supercomment
+  mini** (next section) — one bold verdict line + at most one fold.
+
+## Supercomment mini
+
+The smallest member of the family (say "supercomment mini" / "mini" / "super-concise"). For
+**follow-up replies, "addressed your review" acks, status/hold notes, small answers** — where
+the counterpart re-reads from the diff and a full TL;DR block would be noise. Same skill, minimal skin:
+
+- **Glimpse = one bold verdict**: `**Done**` · `**Both applied**` · `**Fixed**` · `**Holding**`
+  (+ `@maintainer` if it aids routing) — for an *ack/done* reply, nothing more follows it.
+- **Status/hold is the exception:** keep the existing stock-shape contract — bold verdict **plus
+  one short visible sentence** saying what's pending and when the follow-up lands (`**Holding** —
+  MRE in progress, lands tomorrow; please don't merge yet`). Never a bare `**Holding**` that
+  drops the pending work — that's the one case where the glimpse carries a sentence, not just a label.
+- **Depth = at most one fold** — an *ack* folds its entire what-changed / evidence list into ONE
+  `<details><summary><b>What changed</b></summary>`; a status/hold takes **no** fold at all.
+- **No `**TL;DR:**` label, no visible numbered list.** Expanding the glimpse is exactly the
+  shape the operator keeps hand-trimming back to "super-concise" (earned on two nicegui PRs,
+  6155 / 6157, 2026-07-21).
+
+**Mini still inherits the full discipline** — it is not a lighter *standard*, just a lighter
+*skin*. The Claim-discipline rules and every GitHub-mechanics gotcha below apply unchanged:
+the permanent `#N` backlink / `@user` ping traps fire on a one-liner exactly as on a wall of
+text. **Super-concise ≠ drop the evidence** — it means *fold* it and shrink the glimpse to a line.
 
 ## Editing posted comments
 
@@ -108,6 +133,9 @@ value as a record.
   run-on, multi-part reasoning crammed inline as `(1)… (2)…`. It's all *there*, but the
   glimpse reader can't skim it — the verdict and the argument's shape must survive a
   half-second scan. Label on its own line; discrete reasons as a list.
+- **A follow-up "review addressed" reply that dumps the what-changed list unfolded**, or
+  leads with a `**TL;DR:**` paragraph, when a one-word bold verdict + one folded block would
+  do. Super-concise ≠ drop the evidence — it means fold it and shrink the glimpse to a line.
 - **A comment that adds nothing the linked source doesn't.** Add a decision, synthesis,
   fresh evidence, or the actionable consequence — restating the PR/issue isn't a comment.
   (Summarising for a self-sufficient TL;DR is fine; adding *zero* is the smell.)
